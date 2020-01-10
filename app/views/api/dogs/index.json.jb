@@ -1,0 +1,17 @@
+@dogs.map do |dog|
+  {
+    id: dog.id,
+    name: dog.name,
+    color: dog.color,
+    breed: dog.breed,
+    age: dog.age,
+    weight: dog.weight,
+    behavior_traits: dog.behavior_traits,
+    image_url: dog.image_url,
+    user_id: dog.user_id,
+    bio: dog.bio,
+    latitude: dog.latitude,
+    longitude: dog.longitude
+  }
+end
+
