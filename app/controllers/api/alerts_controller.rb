@@ -12,9 +12,6 @@ class Api::AlertsController < ApplicationController
     @alert = Alert.find_by(id: the_id)
     p "********************"
    
-
-    # p HTTP.auth.get("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOiAxNTc1NDE1ODYwLCAianRpIjogNTc3OTEsICJvcmdhbml6YXRpb25faWQiOiAyNzM2Mn0.Oh7gM6wkHHattSuoyS2tvfu1nzSrJL2ydASRSFiblMw").get("https://api.logistimatics.com/api/devices")
-   
     p HTTP.headers(:accept => "application/json", :authorization => "Bearer #{ENV['GPS_API_KEY']}")
   .get("https://api.logistimatics.com/api/devices").parse
 
@@ -49,4 +46,10 @@ class Api::AlertsController < ApplicationController
   end
 
 end
+
+
+$http.get('api/user').then(response => {
+   console.log(response.body);
+})
+
 

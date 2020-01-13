@@ -47,15 +47,6 @@ class Api::DogsController < ApplicationController
     @dog.user_id = params[:user_id] || @dog.user_id
     @dog.bio = params[:bio] || @dog.bio
 
-    response = HTTP.headers(:accept => "application/json", :authorization => "Bearer #{ENV['GPS_API_KEY']}")
-    .get("https://api.logistimatics.com/api/devices")
-
-
-    latitude = response.parse[0]["latitude"].to_f
-  
-    @dog.latitude = latitude
-    @dog.longitude = response.parse[0]["longitude"].to_f
-
     @dog.save
     render 'show.json.jb'
 
@@ -81,15 +72,9 @@ class Api::DogsController < ApplicationController
     response = HTTP.headers(:accept => "application/json", :authorization => "Bearer #{ENV['GPS_API_KEY']}")
     .get("https://api.logistimatics.com/api/devices")
 
-    p response
-    p latitude = response.parse[0]["latitude"]
-    p longitude = response.parse[0]["longitude"]
-    p address = response.parse[0]["address"]
-
-    #find dog location
-    #update location in DB
-    #determine if dog is out of bounds
-    #if out of bounds, make an alert
+    @dog.latitude = response.parse[0]["latitude"].to_f
+    @dog.longitude = response.parse[0]["longitude"].to_f
+    @dog.address = response.parse[0]["address"]
 
     # NW corner 38.54524, -121.44186
     # NE corner 38.54525, -121.44168
@@ -99,10 +84,5 @@ class Api::DogsController < ApplicationController
     # if latitude > 38.5425 || latitude < 38.5449 || longitude < -121.44182 || longitude > -121.44168
 
     # end
-
   end
-
 end
-
-
-

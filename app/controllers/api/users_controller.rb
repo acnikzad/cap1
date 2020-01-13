@@ -54,4 +54,9 @@ class Api::UsersController < ApplicationController
     render 'destroy.json.jb'
   end
 
+  def current_dog_owner
+    current_user
+    render 'show.json.jb'
+  end
+
 end

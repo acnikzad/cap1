@@ -28,8 +28,10 @@ Rails.application.routes.draw do
     delete "/alerts/:id" => "alerts#destroy"
 
     post "/sessions" => "sessions#create"
+    get "/user" => "users#current_dog_owner"
 
-    patch "/location/:id" => "dogs#real_time_location"
-    
+    patch "/location" => "dogs#real_time_location"
+
+
   end
 end
