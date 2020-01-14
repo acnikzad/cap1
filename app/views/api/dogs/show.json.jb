@@ -10,5 +10,6 @@
     user_id: @dog.user_id,
     bio: @dog.bio,
     latitude: @dog.latitude,
-    longitude: @dog.longitude
+    longitude: @dog.longitude,
+    address: @dog.address
 }

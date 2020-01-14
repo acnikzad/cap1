@@ -46,6 +46,12 @@ class Api::DogsController < ApplicationController
     @dog.image_url = params[:image_url] || @dog.image_url
     @dog.user_id = params[:user_id] || @dog.user_id
     @dog.bio = params[:bio] || @dog.bio
+    response = HTTP.headers(:accept => "application/json", :authorization => "Bearer #{ENV['GPS_API_KEY']}")
+    .get("https://api.logistimatics.com/api/devices")
+
+    @dog.latitude = response.parse[0]["latitude"].to_f
+    @dog.longitude = response.parse[0]["longitude"].to_f
+    @dog.address = response.parse[0]["address"]
 
     @dog.save
     render 'show.json.jb'
