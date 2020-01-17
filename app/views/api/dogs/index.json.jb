@@ -12,7 +12,10 @@
     bio: dog.bio,
     latitude: dog.latitude,
     longitude: dog.longitude,
-    address: dog.address
+    address: dog.address,
+    gps_id: dog.gps_id,
+    ping_time: dog.ping_time,
+    battery: dog.battery
   }
 end
 

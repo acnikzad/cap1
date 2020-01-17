@@ -52,6 +52,9 @@ class Api::DogsController < ApplicationController
     @dog.latitude = response.parse[0]["latitude"].to_f
     @dog.longitude = response.parse[0]["longitude"].to_f
     @dog.address = response.parse[0]["address"]
+    @dog.gps_id  = response.parse[0]["device_id"]
+    @dog.ping_time  = response.parse[0]["last_ping_at"]
+    @dog.battery  = response.parse[0]["battery_percentage"].to_i
 
     @dog.save
     render 'show.json.jb'
