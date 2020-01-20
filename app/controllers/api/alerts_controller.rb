@@ -21,7 +21,9 @@ class Api::AlertsController < ApplicationController
   def create
     @alert = Alert.create(
       dog_id: params[:dog_id],
-      user_id: params[:user_id]
+      user_id: params[:user_id],
+      latitude: params[:latitude],
+      longitude: params[:longitude]
       )
     @alert.save
     render 'show.json.jb'
@@ -47,9 +49,8 @@ class Api::AlertsController < ApplicationController
 
 end
 
-
-$http.get('api/user').then(response => {
-   console.log(response.body);
-})
+# $http.get('api/user').then(response => {
+#    console.log(response.body);
+# })
 
 

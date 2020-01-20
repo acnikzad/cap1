@@ -6,7 +6,8 @@
     email: user.email,
     password: user.password,
     phone_number: user.phone_number,
-    home_address: user.home_address
+    home_address: user.home_address,
+    image_url: user.image_url
 
   }
 end

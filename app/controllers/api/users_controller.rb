@@ -19,7 +19,8 @@ class Api::UsersController < ApplicationController
     password: params[:password],
     password_confirmation: params[:password_confirmation],
     phone_number: params[:phone_number],
-    home_address: params[:home_address]
+    home_address: params[:home_address],
+    image_url: params[:image_url]
       )
     # @user.save
     # render 'show.json.jb'
@@ -40,6 +41,7 @@ class Api::UsersController < ApplicationController
     @user.password = params[:password] || @user.password
     @phone_number = params[:phone_number] || @user.phone_number
     @home_address = params[:home_address] || @user.home_address
+    @image_url = params[:image_url] || @user.image_url
 
     @user.save
     render 'show.json.jb'

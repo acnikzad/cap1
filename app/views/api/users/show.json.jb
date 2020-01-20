@@ -6,6 +6,7 @@
     password: current_user.password,
     phone_number: current_user.phone_number,
     home_address: current_user.home_address,
+    image_url: current_user.image_url,
 
     dogs: current_user.dogs
   }

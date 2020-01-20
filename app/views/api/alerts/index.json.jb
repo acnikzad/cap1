@@ -2,7 +2,9 @@
   {
     id: alert.id,
     dog_id: alert.dog_id,
-    user_id: alert.user_id
+    user_id: alert.user_id,
+    latitude: alert.latitude,
+    longitude: alert.longitude
   }
 end
 
