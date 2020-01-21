@@ -4,7 +4,11 @@
     dog_id: alert.dog_id,
     user_id: alert.user_id,
     latitude: alert.latitude,
-    longitude: alert.longitude
+    longitude: alert.longitude,
+    dog_name: alert.dog_name,
+    owner_name: alert.owner_name,
+    contact_number: alert.contact_number,
+    address: alert.address
   }
 end
 
