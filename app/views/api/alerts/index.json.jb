@@ -8,7 +8,9 @@
     dog_name: alert.dog_name,
     owner_name: alert.owner_name,
     contact_number: alert.contact_number,
-    address: alert.address
+    address: alert.address,
+    breed: alert.breed,
+    color: alert.color
   }
 end
 

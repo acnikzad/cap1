@@ -27,7 +27,9 @@ class Api::AlertsController < ApplicationController
       dog_name: params[:dog_name],
       owner_name: params[:owner_name],
       contact_number: params[:contact_number],
-      address: params[:address]
+      address: params[:address],
+      breed: params[:breed],
+      color: params[:color],
       )
     @alert.save
     render 'show.json.jb'
